@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/HeroSection.css';
+import UploadPhoto from './UploadPhoto';
 
 const HeroSection = () => {
   return (
@@ -23,6 +24,7 @@ const HeroSection = () => {
           Discover the perfect colors that complement your skin tone and style. 
           And, finally find harmony in your wardrobe.
         </p>
+        <UploadPhoto />
         <div className="hero-buttons">
           <button>Learn More →</button>
           <button>Get Started →</button>
