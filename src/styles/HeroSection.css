@@ -1,8 +1,8 @@
 body {
   margin: 0;
   font-family: 'Georgia', serif;
-  background: #1a1a1a;
-  color: #fff;
+  background: #F2F2F2;
+  color: #000000;
 }
 
 .hero-container {
@@ -16,22 +16,23 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 3rem;
-  background-color: #000;
+  background-color: #F2F2F2;
+  
 }
 
 .logo {
   font-size: 1.8rem;
-  color: #fff;
+  color: black;
 }
 
 .logo em {
   font-style: italic;
-  color: peachpuff;
+  color: black;
 }
 
 .navbar nav a {
   margin-left: 1.5rem;
-  color: #ddd;
+  color: black;
   text-decoration: none;
   font-style: italic;
 }
@@ -44,26 +45,30 @@ body {
 
 .hero-content {
   text-align: center;
-  padding: 6rem 2rem;
+  padding-block: 6rem;
   flex-grow: 1;
+}
+
+.hero-content-skintone {
+  animation: colorCycle 6s ease-in-out infinite;
 }
 
 .hero-content h2 {
   font-size: 2.5rem;
-  color: peachpuff;
+  color: #1A1A1A;
 }
 
 .hero-content h1.highlight {
   font-size: 4rem;
   font-style: italic;
-  color: sandybrown;
+  color: black;
 }
 
 .hero-content p {
   margin: 2rem auto;
   max-width: 700px;
   font-size: 1.3rem;
-  color: #ddd;
+  color: black;
 }
 
 .hero-buttons button {
@@ -71,8 +76,8 @@ body {
   padding: 0.8rem 1.6rem;
   font-size: 1.1rem;
   background: none;
-  border: 2px solid #fff;
-  color: #fff;
+  border: 2px solid black;
+  color: black;
   cursor: pointer;
   transition: 0.3s ease;
 }
@@ -83,13 +88,29 @@ body {
   border-color: peachpuff;
 }
 
+.hero-upload_photo-main-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  margin-block-start: 10rem;
+  width: 65%;
+}
+
+.hero-upload_photo-description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  flex-direction: column;
+}
+
 .logo.mobile-only {
   display: block;
   font-family: 'Georgia', serif;
   font-size: 2rem;
   font-style: italic;
   font-weight: bold;
-  color: #fff;
+  color: black;
 }
 
 .logo.desktop-only {
@@ -98,7 +119,7 @@ body {
   font-size: 2rem;
   font-style: italic;
   font-weight: bold;
-  color: #fff;
+  color: black;
   margin-right: 2rem;
 }
 
@@ -138,4 +159,12 @@ body {
 .nav-link-custom a:hover {
   text-decoration: underline;
   color: peachpuff;
+}
+
+@keyframes colorCycle {
+  0%   { color: rgb(224, 203, 186); } /* beige */
+  25%  { color: #f7c59f; }            /* peachy */
+  50%  { color: #e9bcb7; }            /* dusty pink */
+  75%  { color: #303031; }            /* soft violet */
+  100% { color: rgb(224, 203, 186); } /* back to beige */
 }

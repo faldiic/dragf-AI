@@ -161,8 +161,8 @@ const UploadPhoto = () => {
         style={{ zIndex: 2, position: 'absolute', inset: 0, cursor: 'pointer' }}
       />
       <div className="upload-dropzone-text">
-        <div>Click to upload a photo or drag and drop it here.</div>
-        <small>Allowed formats: PNG and JPG.</small>
+        <div>Hey, you!. Drag and drop your beautiful selfie here.</div>
+        <small>Only PNG and JPG Allowed</small>
       </div>
       {isError && <div className="upload-message error">{errorMessage}</div>}
     </div>
