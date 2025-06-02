@@ -27,7 +27,7 @@ const HeroSection = () => {
       </header>
 
       <main className="hero-content">
-        <h2>Unlock Your Personal Color <span className='hero-content-skintone'>Skin Tone</span> with</h2>
+        <h2>Reveal your true <span className='hero-content-skintone'>Color</span> with</h2>
         <h1 className='highlight'>
           <Typewriter options={{
             strings: ['dragfAI'],
@@ -38,8 +38,8 @@ const HeroSection = () => {
           }} />
         </h1>
         <p>
-          Discover the perfect colors that complement your skin tone and style. 
-          And, finally find harmony in your wardrobe.
+          Unveil the perfect pallete that enhances your skin tone and personal elegance,
+          achieving effortless harmony in every outfit.
         </p>
         <div className="hero-buttons">
           <button>Learn More →</button>
