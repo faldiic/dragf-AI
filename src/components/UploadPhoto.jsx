@@ -1,5 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/UploadPhoto.css';
+import seasonMstColors from '../data/season_mst_colors.json';
 
 const loadingMessages = [
   'Uploading image',
@@ -13,6 +15,7 @@ const loadingMessages = [
 ];
 
 const UploadPhoto = () => {
+  const navigate = useNavigate();
   const fileInputRef = useRef(null);
   const [file, setFile] = useState(null);
   const [imgSrc, setImgSrc] = useState('');
@@ -84,6 +87,16 @@ const UploadPhoto = () => {
     }, transitionDuration / 2);
   };
 
+  function getSeasonByMst(mstLabel) {
+    // mstLabel: e.g. 'mst_1', 'mst_2', ...
+    const mstNum = parseInt(mstLabel.replace(/[^0-9]/g, ''));
+    if ([1,2,3].includes(mstNum)) return 'Spring';
+    if ([4,5,6].includes(mstNum)) return 'Autumn';
+    if (mstNum === 7) return 'Summer';
+    if ([8,9,10].includes(mstNum)) return 'Winter';
+    return null;
+  }
+
   const submitImage = async () => {
     if (!file) {
       setIsError(true);
@@ -97,15 +110,41 @@ const UploadPhoto = () => {
     const interval = setInterval(updateMessage, transitionDuration);
     setMessageInterval(interval);
     try {
-      // Simulasi upload
-      await new Promise((res) => setTimeout(res, 5000));
-      // Simulasi sukses, bisa diganti dengan fetch ke backend
+      // Kirim ke backend Flask
+      const formData = new FormData();
+      formData.append('file', file);
+      const response = await fetch('https://dragf-ai-test-production.up.railway.app/predict', {
+        method: 'POST',
+        body: formData,
+      });
+      if (!response.ok) {
+        throw new Error('Failed to analyze image');
+      }
+      const data = await response.json();
+      // Ambil musim dan warna dari JSON mapping
+      const season = getSeasonByMst(data.skintone);
+      const mapping = seasonMstColors[season];
+      // Simpan hasil analysis ke localStorage
+      if (imgSrc.startsWith('data:image/')) {
+        const base64 = imgSrc.split(',')[1];
+        localStorage.setItem('croppedImage', base64);
+      }
+      localStorage.setItem('analysis', JSON.stringify({
+        season: season,
+        mst: data.skintone,
+        confidence: data.confidence,
+        characteristics: `Your skin tone is ${data.skintone} (${season})`,
+        colorsToSuggest: mapping.recommendedColors,
+        reasonToSuggest: 'Recommended based on your season and MST.',
+        colorsToAvoid: mapping.avoidColors,
+        reasonToAvoid: 'Avoid these based on your season and MST.',
+        content: 'This is a result from AI analysis.',
+        textColor: '#e0a96d',
+      }));
       setIsUploading(false);
       clearInterval(interval);
       setMessageInterval(null);
-      // Simpan ke localStorage jika perlu
-      // localStorage.setItem('croppedImage', imgSrc);
-      // window.location.href = '/analysis';
+      navigate('/analysis');
     } catch {
       setIsError(true);
       setErrorMessage('Failed to process the image. Please try another photo or try again later.');
@@ -161,8 +200,8 @@ const UploadPhoto = () => {
         style={{ zIndex: 2, position: 'absolute', inset: 0, cursor: 'pointer' }}
       />
       <div className="upload-dropzone-text">
-        <div>Hey, you!. Drag and drop your beautiful selfie here.</div>
-        <small>Only PNG and JPG Allowed</small>
+        <div>Click to upload a photo or drag and drop it here.</div>
+        <small>Allowed formats: PNG and JPG.</small>
       </div>
       {isError && <div className="upload-message error">{errorMessage}</div>}
     </div>
