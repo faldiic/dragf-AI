@@ -55,6 +55,11 @@ const HeroSection = () => {
           </div>
         </section>
       </main>
+
+      <footer className='footer-container'>
+          <a href="/" className='footer-logo'><span>dragfAI</span></a>
+          <p className='footer-logo_copyrights'>© 2025 All rights reserved.</p>
+      </footer>
     </div>
   );
 };

@@ -5,9 +5,9 @@ import '../styles/HeroSection.css';
 const Contact = () => (
   <div className="hero-container">
     <header className="navbar">
-      <Link to="/" className="logo mobile-only"><span>Color Tone</span></Link>
+      <Link to="/" className="logo mobile-only"><span>dragfAI</span></Link>
       <nav className="nav-desktop">
-        <Link to="/" className="logo desktop-only"><span>Color Tone</span></Link>
+        <Link to="/" className="logo desktop-only"><span>dragfAI</span></Link>
         <div className="nav-link-custom"><Link to="/about">About</Link></div>
         <div className="nav-link-custom"><Link to="/contact">Contact</Link></div>
         <div className="nav-link-custom"><Link to="/support">Support</Link></div>
@@ -19,6 +19,10 @@ const Contact = () => (
       <h1 className="highlight">Get in Touch</h1>
       <p>Have questions? Reach out to us via email or our contact form. We are here to help you!</p>
     </main>
+    <footer className='footer-container'>
+        <a href="/" className='footer-logo'><span>dragfAI</span></a>
+        <p className='footer-logo_copyrights'>© 2025 All rights reserved.</p>
+    </footer>
   </div>
 );
 

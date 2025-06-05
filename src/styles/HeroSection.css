@@ -168,3 +168,28 @@ body {
   75%  { color: #303031; }            /* soft violet */
   100% { color: rgb(224, 203, 186); } /* back to beige */
 }
+
+.footer-container {
+  color: white;
+  background-color: black;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  padding-block: 3rem;
+}
+
+.footer-logo {
+  font-style: italic;
+  color: white;
+  text-decoration: none;
+  font-family: 'Georgia', serif;
+
+  padding-right: 0.5rem;
+}
+
+.footer-logo_copyrights {
+  font-size: small;
+  color: #737373;
+}

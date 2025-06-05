@@ -90,10 +90,10 @@ const UploadPhoto = () => {
   function getSeasonByMst(mstLabel) {
     // mstLabel: e.g. 'mst_1', 'mst_2', ...
     const mstNum = parseInt(mstLabel.replace(/[^0-9]/g, ''));
-    if ([1,2,3].includes(mstNum)) return 'Spring';
-    if ([4,5,6].includes(mstNum)) return 'Autumn';
-    if (mstNum === 7) return 'Summer';
-    if ([8,9,10].includes(mstNum)) return 'Winter';
+    if ([1,2,3].includes(mstNum)) return 'Warm Spring';
+    if ([4,5,6].includes(mstNum)) return 'Warm Autumn';
+    if (mstNum === 7) return 'Cold Summer';
+    if ([8,9,10].includes(mstNum)) return 'Cold Winter';
     return null;
   }
 
@@ -133,12 +133,12 @@ const UploadPhoto = () => {
         season: season,
         mst: data.skintone,
         confidence: data.confidence,
-        characteristics: `Your skin tone is ${data.skintone} (${season})`,
+        characteristics: `Your skin tone is ${season}`,
         colorsToSuggest: mapping.recommendedColors,
         reasonToSuggest: 'Recommended based on your season and MST.',
         colorsToAvoid: mapping.avoidColors,
         reasonToAvoid: 'Avoid these based on your season and MST.',
-        content: 'This is a result from AI analysis.',
+        content: 'This is a analysis result.',
         textColor: '#e0a96d',
       }));
       setIsUploading(false);

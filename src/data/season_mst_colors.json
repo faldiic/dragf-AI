@@ -1,6 +1,7 @@
 {
-  "Spring": {
+  "Warm Spring": {
     "mst": ["Monk 01", "Monk 02", "Monk 03"],
+    "description": "Based on the image, you align with the characteristics of a Warm Spring. Whether your skin is fair with golden undertones or deeper with a glowing warmth, it complements the fresh, bright, and lively colors of spring beautifully.",
     "recommendedColors": [
       {"name": "#FFB6B3", "hex": "#FFB6B3"},
       {"name": "#FFDAB9", "hex": "#FFDAB9"},
@@ -30,8 +31,9 @@
       {"name": "#483D8B", "hex": "#483D8B"}
     ]
   },
-  "Autumn": {
+  "Warm Autumn": {
     "mst": ["Monk 04", "Monk 05", "Monk 06"],
+    "description": "From the given image, you exhibit traits of a Warm Autumn. Your skin tone whether light with a warm golden hue or dark with rich, earthy warmth—blends seamlessly with the deep, warm, and nature-inspired shades of the autumn palette.",
     "recommendedColors": [
       {"name": "#A0522D", "hex": "#A0522D"},
       {"name": "#CD853F", "hex": "#CD853F"},
@@ -61,8 +63,9 @@
       {"name": "#6A5ACD", "hex": "#6A5ACD"}
     ]
   },
-  "Summer": {
+  "Cold Summer": {
     "mst": ["Monk 07"],
+    "description": "From the image shown, you display features of a Cold Summer. Your skin tone, whether light with a soft cool undertone or deeper with a muted grayish tint, harmonizes with the gentle, cool, and pastel hues that define this season’s palette.",
     "recommendedColors": [
       {"name": "#87CEFA", "hex": "#87CEFA"},
       {"name": "#AFEEEE", "hex": "#AFEEEE"},
@@ -92,8 +95,9 @@
       {"name": "#363636", "hex": "#363636"}
     ]
   },
-  "Winter": {
+  "Cold Winter": {
     "mst": ["Monk 08", "Monk 09", "Monk 10"],
+    "description": "Based on the provided image, you exhibit the characteristics of a Cold Winter. Your skin—whether fair with a cool undertone or deep with a bluish-cool hue—reflects the crisp, icy quality of this season and pairs well with sharp, cool-toned, high-contrast colors.",
     "recommendedColors": [
       {"name": "#000000", "hex": "#000000"},
       {"name": "#1C1C1C", "hex": "#1C1C1C"},

@@ -17,7 +17,7 @@
   font-size: 2.2rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
-  color: peachpuff;
+  color: black;
 }
 .analysis-image-container {
   display: flex;
@@ -66,7 +66,7 @@
   background: none;
   border: none;
   font-size: 1.1rem;
-  color: #e0a96d;
+  color: black;
   padding: 0.5rem 1.2rem;
   border-radius: 0.5rem 0.5rem 0 0;
   cursor: pointer;
@@ -122,10 +122,10 @@
 }
 .alert-box {
   background: #fff7f0;
-  color: #b48a78;
+  color: black;
   border-radius: 0.7rem;
-  padding: 0.7rem 1rem;
-  margin: 1rem 0 0.5rem 0;
+  padding: 0.01rem 1rem 0.7rem 1rem;
+  margin: 0 0 0.5rem 0;
   font-size: 0.98rem;
   box-shadow: 0 1px 4px rgba(0,0,0,0.04);
 }
@@ -182,7 +182,7 @@
   left: 50%;
   bottom: 0;
   transform: translateX(-50%) translateY(3%);
-  min-width: 340px;
+  min-width: 336px;
   min-height: 48px;
   padding: 0.7rem 1.5rem 0.7rem 1.5rem;
   border-radius: 0 0 0.833rem 0.833rem;
@@ -206,7 +206,8 @@
   color: #222;
   box-shadow: 0 1px 4px rgba(0,0,0,0.08);
 } */
-@media (max-width: 600px) {
+
+/* @media (max-width: 600px) {
   .analysis-container {
     padding: 0.5rem;
   }
@@ -214,4 +215,4 @@
     width: 98vw;
     max-width: 98vw;
   }
-}
+} */

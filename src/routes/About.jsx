@@ -5,9 +5,9 @@ import '../styles/HeroSection.css';
 const About = () => (
   <div className="hero-container">
     <header className="navbar">
-      <Link to="/" className="logo mobile-only"><span>Color Tone</span></Link>
+      <Link to="/" className="logo mobile-only"><span>dragfAI</span></Link>
       <nav className="nav-desktop">
-        <Link to="/" className="logo desktop-only"><span>Color Tone</span></Link>
+        <Link to="/" className="logo desktop-only"><span>dragfAI</span></Link>
         <div className="nav-link-custom"><Link to="/about">About</Link></div>
         <div className="nav-link-custom"><Link to="/contact">Contact</Link></div>
         <div className="nav-link-custom"><Link to="/support">Support</Link></div>
@@ -19,6 +19,10 @@ const About = () => (
       <h1 className="highlight">Our Mission</h1>
       <p>Welcome to our About page! Learn more about our mission and team here. Kami berkomitmen membantu Anda menemukan warna terbaik untuk gaya dan kepercayaan diri Anda.</p>
     </main>
+    <footer className='footer-container'>
+          <a href="/" className='footer-logo'><span>dragfAI</span></a>
+          <p className='footer-logo_copyrights'>© 2025 All rights reserved.</p>
+      </footer>
   </div>
 );
 
