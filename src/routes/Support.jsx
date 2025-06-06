@@ -18,6 +18,9 @@ const Support = () => (
       <h2>Support</h2>
       <h1 className="highlight">How Can We Help?</h1>
       <p>Need help? Visit our support resources or contact our team for assistance. We are ready to support you!</p>
+      <section className='hero-content_contact-support'>
+        <p>tes</p>
+      </section>
     </main>
     <footer className='footer-container'>
         <a href="/" className='footer-logo'><span>dragfAI</span></a>

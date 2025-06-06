@@ -138,7 +138,7 @@ const UploadPhoto = () => {
         reasonToSuggest: 'Recommended based on your season and MST.',
         colorsToAvoid: mapping.avoidColors,
         reasonToAvoid: 'Avoid these based on your season and MST.',
-        content: 'This is a analysis result.',
+        content: 'This is your analysis result.',
         textColor: '#e0a96d',
       }));
       setIsUploading(false);

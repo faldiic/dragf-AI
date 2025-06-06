@@ -142,50 +142,56 @@ function Analysis() {
     <div className="analysis-container">
       {!isLoading && analysis ? (
         <>
-          <h1 className="analysis-title">Your Personal Color Analysis</h1>
-          <div className="analysis-image-container" style={{ position: 'relative' }}>
-            <div className="relative w-full">
+          <h1 className="analysis-title">Your Personalized Color Profile</h1>
+          <div className="analysis-main-grid">
+            {/* Left: Image & Season */}
+            <div className="analysis-image-panel">
               <img src={croppedImage} alt="Preview" className="analysis-img" />
               {/* Popup overlay color preview */}
               {showPopup && (
-                <div className="color-popup-overlay" style={{ background: selectedColor }}>
+                <div className="color-popup-overlay" style={{ background: selectedColor }} />
+              )}
+              {/* <div style={{ marginTop: "1.2rem", width: "100%" }}>
+                <div className="analysis-characteristics">{analysis.characteristics}</div>
+              </div> */}
+            </div>
+            {/* Right: Tabs & Swatch */}
+            <div className="analysis-info-panel">
+              <div className="analysis-tabs">
+                <div className="tab-list">
+                  <button className={tab === 'analysis' ? 'active' : ''} onClick={() => setTab('analysis')}>Analysis</button>
+                  <button className={tab === 'colorsToSuggest' ? 'active' : ''} onClick={() => setTab('colorsToSuggest')}>Recommended Colors</button>
+                  <button className={tab === 'colorsToAvoid' ? 'active' : ''} onClick={() => setTab('colorsToAvoid')}>Colors to Avoid</button>
                 </div>
-              )}
-            </div>
-          </div>
-          <div className="analysis-tabs">
-            <div className="tab-list">
-              <button className={tab === 'analysis' ? 'active' : ''} onClick={() => setTab('analysis')}>Analysis</button>
-              <button className={tab === 'colorsToSuggest' ? 'active' : ''} onClick={() => setTab('colorsToSuggest')}>Recommended Colors</button>
-              <button className={tab === 'colorsToAvoid' ? 'active' : ''} onClick={() => setTab('colorsToAvoid')}>Colors to Avoid</button>
-            </div>
-            <div className="tab-content">
-              {tab === 'analysis' && (
-                <>
-                  <h2 className="analysis-season" style={{ color: analysis.textColor }}>{analysis.season}</h2>
-                  <p>{analysis.content}</p>
-                  <Alert {...navigationTip} />
-                </>
-              )}
-              {tab === 'colorsToSuggest' && (
-                <>
-                  <h2 className="analysis-section-title">Recommended Colors</h2>
-                  <p>{analysis.reasonToSuggest}</p>
-                  <SwatchSlide colors={analysis.colorsToSuggest} onColorSelected={handleColorSelected} />
-                  <Alert {...tip} />
-                </>
-              )}
-              {tab === 'colorsToAvoid' && (
-                <>
-                  <h2 className="analysis-section-title">Colors to Avoid</h2>
-                  <p>{analysis.reasonToAvoid}</p>
-                  <SwatchSlide colors={analysis.colorsToAvoid} onColorSelected={handleColorSelected} />
-                  <Alert {...tip} />
-                </>
-              )}
-              <span className="disclaimer-container">
-                <Alert title={disclaimer.description} description="" />
-              </span>
+                <div className="tab-content">
+                  {tab === 'analysis' && (
+                    <>
+                      <div>{analysis.content}</div>
+                      <h2 className="analysis-season" style={{ color: analysis.textColor }}>{analysis.season}</h2>
+                      <Alert {...navigationTip} />
+                    </>
+                  )}
+                  {tab === 'colorsToSuggest' && (
+                    <>
+                      <h2 className="analysis-section-title">Recommended Colors</h2>
+                      <p>{analysis.reasonToSuggest}</p>
+                      <SwatchSlide colors={analysis.colorsToSuggest} onColorSelected={handleColorSelected} />
+                      <Alert {...tip} />
+                    </>
+                  )}
+                  {tab === 'colorsToAvoid' && (
+                    <>
+                      <h2 className="analysis-section-title">Colors to Avoid</h2>
+                      <p>{analysis.reasonToAvoid}</p>
+                      <SwatchSlide colors={analysis.colorsToAvoid} onColorSelected={handleColorSelected} />
+                      <Alert {...tip} />
+                    </>
+                  )}
+                  <span className="disclaimer-container">
+                    <Alert title={disclaimer.description} description="" />
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
           <div className="analysis-actions">

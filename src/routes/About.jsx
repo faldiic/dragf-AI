@@ -17,7 +17,10 @@ const About = () => (
     <main className="hero-content">
       <h2>About Us</h2>
       <h1 className="highlight">Our Mission</h1>
-      <p>Welcome to our About page! Learn more about our mission and team here. Kami berkomitmen membantu Anda menemukan warna terbaik untuk gaya dan kepercayaan diri Anda.</p>
+      <p>Welcome to our About page.
+        We are dedicated to helping you uncover the colors that best enhance your style, 
+        elevate your confindence, and reflect your true essence.
+      </p>
     </main>
     <footer className='footer-container'>
           <a href="/" className='footer-logo'><span>dragfAI</span></a>
