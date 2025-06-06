@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/HeroSection.css';
-import UploadPhoto from './UploadPhoto';
+import '../styles/Globals.css';
+import UploadPhoto from '../components/UploadPhoto';
 import Typewriter from "typewriter-effect";
 
 const HeroSection = () => {
@@ -20,7 +20,6 @@ const HeroSection = () => {
         <nav className="nav-desktop">
           <a href="/" className="logo desktop-only"><span>dragfAI</span></a>
           <div className="nav-link-custom"><Link to="/about">About</Link></div>
-          <div className="nav-link-custom"><Link to="/contact">Contact</Link></div>
           <div className="nav-link-custom"><Link to="/support">Support</Link></div>
         </nav>
         <div className="mode-toggle">☀️</div>

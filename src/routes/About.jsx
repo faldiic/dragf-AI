@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/HeroSection.css';
+import '../styles/Globals.css';
 
 const About = () => (
   <div className="hero-container">
@@ -9,7 +9,6 @@ const About = () => (
       <nav className="nav-desktop">
         <Link to="/" className="logo desktop-only"><span>dragfAI</span></Link>
         <div className="nav-link-custom"><Link to="/about">About</Link></div>
-        <div className="nav-link-custom"><Link to="/contact">Contact</Link></div>
         <div className="nav-link-custom"><Link to="/support">Support</Link></div>
       </nav>
       <div className="mode-toggle">☀️</div>
