@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import '../styles/Globals.css';
 import UploadPhoto from '../components/UploadPhoto';
 import Typewriter from "typewriter-effect";
+import Navbar from '../components/Navbar';
 
 const HeroSection = () => {
+
   const handleGetStarted = () => {
     const uploadSection = document.getElementById('upload-image');
     if (uploadSection) {
@@ -15,16 +17,7 @@ const HeroSection = () => {
 
   return (
     <div className="hero-container">
-      <header className="navbar">
-        <a href="/" className="logo mobile-only"><span>dragfAI</span></a>
-        <nav className="nav-desktop">
-          <a href="/" className="logo desktop-only"><span>dragfAI</span></a>
-          <div className="nav-link-custom"><Link to="/about">About</Link></div>
-          <div className="nav-link-custom"><Link to="/support">Support</Link></div>
-        </nav>
-        <div className="mode-toggle">☀️</div>
-      </header>
-
+      <Navbar />
       <main className="hero-content">
         <h2>Reveal your true <span className='hero-content-skintone'>Color</span> with</h2>
         <h1 className='highlight'>
@@ -41,7 +34,6 @@ const HeroSection = () => {
           achieving effortless harmony in every outfit.
         </p>
         <div className="hero-buttons">
-          <button>Learn More →</button>
           <button onClick={handleGetStarted}>Get Started →</button>
         </div>
         <section className='hero-upload_photo-main-container'>

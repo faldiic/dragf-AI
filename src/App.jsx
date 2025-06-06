@@ -7,13 +7,16 @@ import Analysis from './routes/Analysis';
 import './App.css';
 
 function App() {
+
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/support" element={<Support />} />
-      <Route path="/analysis" element={<Analysis />} />
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/support" element={<Support />} />
+        <Route path="/analysis" element={<Analysis />} />
+      </Routes>
+    </>
   );
 }
 

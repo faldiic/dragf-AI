@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import html2canvas from 'html2canvas';
 import '../styles/Analysis.css';
 import seasonData from '../data/season_mst_colors.json';
 
@@ -35,6 +36,7 @@ function Analysis() {
   const [disclaimer, setDisclaimer] = useState({ title: '', description: '' });
   const transitionDuration = 5000;
   const messageInterval = useRef(null);
+  const analysisRef = useRef(null);
 
   useEffect(() => {
     messageInterval.current = setInterval(updateMessage, transitionDuration);
@@ -106,6 +108,19 @@ function Analysis() {
     window.location.href = '/';
   }
 
+  async function handleExport() {
+    if (!analysisRef.current) return;
+    const canvas = await html2canvas(analysisRef.current, {
+      backgroundColor: null,
+      useCORS: true,
+      scale: 2,
+    });
+    const link = document.createElement('a');
+    link.download = 'color-analysis.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  }
+
   // SwatchSlide with popup preview
   function SwatchSlide({ colors, onColorSelected }) {
     return (
@@ -143,7 +158,7 @@ function Analysis() {
       {!isLoading && analysis ? (
         <>
           <h1 className="analysis-title">Your Personalized Color Profile</h1>
-          <div className="analysis-main-grid">
+          <div ref={analysisRef} className="analysis-main-grid">
             {/* Left: Image & Season */}
             <div className="analysis-image-panel">
               <img src={croppedImage} alt="Preview" className="analysis-img" />
@@ -195,7 +210,7 @@ function Analysis() {
             </div>
           </div>
           <div className="analysis-actions">
-            <button className="analysis-btn" onClick={() => alert('Save as image feature coming soon!')}>Export</button>
+            <button className="analysis-btn" onClick={handleExport}>Export</button>
             <button className="analysis-btn" onClick={clearLocalStorage}>Go back to home</button>
           </div>
         </>

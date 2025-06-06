@@ -17,7 +17,7 @@ body {
   align-items: center;
   padding: 1rem 3rem;
   background-color: #F2F2F2;
-  
+  position: relative;
 }
 
 .logo {
@@ -111,6 +111,7 @@ body {
   font-style: italic;
   font-weight: bold;
   color: black;
+  text-decoration: none;;
 }
 
 .logo.desktop-only {
@@ -159,6 +160,10 @@ body {
 .nav-link-custom a:hover {
   text-decoration: underline;
   color: peachpuff;
+}
+
+.mobile-nav-dropdown .nav-link-custom a {
+  color: #111;
 }
 
 @keyframes colorCycle {
@@ -228,4 +233,63 @@ body {
 .hero-content_contact-support_frontend-team > a:hover {
   text-decoration: underline;
   color: rgb(41, 198, 223);
+}
+
+.hamburger-menu {
+  display: block;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  padding: 0;
+  margin-left: auto;
+  z-index: 1001;
+}
+.hamburger-bar {
+  display: block;
+  width: 26px;
+  height: 3px;
+  margin: 4px 0;
+  background: #222;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+@media (min-width: 768px) {
+  .hamburger-menu {
+    display: none;
+  }
+}
+
+.mobile-nav-dropdown {
+  position: absolute;
+  top: 65px;
+  right: 2rem;
+  background: #fff;
+  border-radius: 0.7rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.13);
+  padding: 1.2rem 2rem 1.2rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  z-index: 1000;
+  min-width: 140px;
+}
+
+@media (min-width: 768px) {
+  .mobile-nav-dropdown {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .hero-upload_photo-main-container {
+    grid-template-columns: 1fr;
+    width: 380px;
+    margin-block-start: 5rem;
+  }
 }
