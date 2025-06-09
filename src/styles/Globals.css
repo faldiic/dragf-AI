@@ -124,26 +124,12 @@ body {
   margin-right: 2rem;
 }
 
-@media (min-width: 768px) {
-  .logo.mobile-only {
-    display: none;
-  }
-  .logo.desktop-only {
-    display: block;
-  }
-}
+
 
 .nav-desktop {
   display: none;
 }
-@media (min-width: 768px) {
-  .nav-desktop {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
-  }
-}
+
 
 .nav-link-custom {
   font-family: 'Georgia', serif;
@@ -164,14 +150,6 @@ body {
 
 .mobile-nav-dropdown .nav-link-custom a {
   color: #111;
-}
-
-@keyframes colorCycle {
-  0%   { color: rgb(224, 203, 186); } /* beige */
-  25%  { color: #f7c59f; }            /* peachy */
-  50%  { color: #e9bcb7; }            /* dusty pink */
-  75%  { color: #303031; }            /* soft violet */
-  100% { color: rgb(224, 203, 186); } /* back to beige */
 }
 
 .footer-container {
@@ -259,12 +237,6 @@ body {
   transition: 0.3s;
 }
 
-@media (min-width: 768px) {
-  .hamburger-menu {
-    display: none;
-  }
-}
-
 .mobile-nav-dropdown {
   position: absolute;
   top: 65px;
@@ -280,9 +252,35 @@ body {
   min-width: 140px;
 }
 
+/* RESPONSIVE START */
+
+@media (min-width: 768px) {
+  .logo.mobile-only {
+    display: none;
+  }
+  .logo.desktop-only {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .hamburger-menu {
+    display: none;
+  }
+}
+
 @media (min-width: 768px) {
   .mobile-nav-dropdown {
     display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .nav-desktop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
   }
 }
 
@@ -293,3 +291,29 @@ body {
     margin-block-start: 5rem;
   }
 }
+
+/* RESPONSIVE END */
+
+@keyframes colorCycle {
+  0%   { color: rgb(224, 203, 186); } /* beige */
+  25%  { color: #f7c59f; }            /* peachy */
+  50%  { color: #e9bcb7; }            /* dusty pink */
+  75%  { color: #303031; }            /* soft violet */
+  100% { color: rgb(224, 203, 186); } /* back to beige */
+}
+
+/* dragfAI LOGO START */
+
+@media screen and (max-width: 768px) {
+  .dragfai-logo {
+    display: none;
+  }
+}
+
+.dragfai-logo img {
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+
+/* dragfAI logo END */

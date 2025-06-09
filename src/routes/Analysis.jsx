@@ -68,7 +68,6 @@ function Analysis() {
         };
         setAnalysis(analysisObj);
       }
-      // Set disclaimer sesuai season
       let seasonKey = analysisObj.season;
       if (seasonData[seasonKey] && seasonData[seasonKey].description) {
         setDisclaimer({ title: seasonKey, description: seasonData[seasonKey].description });
@@ -78,7 +77,6 @@ function Analysis() {
       setIsLoading(false);
       clearInterval(messageInterval.current);
     } else {
-      // Tidak ada gambar, redirect ke home setelah loading
       setTimeout(() => {
         setIsLoading(false);
         window.location.href = '/';
@@ -121,7 +119,6 @@ function Analysis() {
     link.click();
   }
 
-  // SwatchSlide with popup preview
   function SwatchSlide({ colors, onColorSelected }) {
     return (
       <div className="swatch-slide">
@@ -140,10 +137,8 @@ function Analysis() {
     );
   }
 
-  // Popup preview color overlay
   const showPopup = !!selectedColor;
 
-  // Alert: judul = description, deskripsi = dynamic dari JSON
   function Alert({ title, description }) {
     return (
       <div className="alert-box">
@@ -157,7 +152,7 @@ function Analysis() {
     <div className="analysis-container">
       {!isLoading && analysis ? (
         <>
-          <h1 className="analysis-title">Your Personalized Color Profile</h1>
+          <h1 className="analysis-title">This Is Your Color Profile</h1>
           <div ref={analysisRef} className="analysis-main-grid">
             {/* Left: Image & Season */}
             <div className="analysis-image-panel">

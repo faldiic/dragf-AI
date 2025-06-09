@@ -233,21 +233,21 @@
     padding: 1.2rem 0.7rem;
   }
   .analysis-info-panel {
-    margin: 0 auto; /* Tambahkan ini agar panel info berada di tengah */
+    margin: 0 auto; 
     width: 100%;
-    max-width: 500px; /* Opsional, agar tidak terlalu lebar */
+    max-width: 500px; 
   }
   .analysis-image-panel {
     margin: 0 auto;
-    max-width: 390px; /* Atur sesuai kebutuhan */
+    max-width: 390px; 
     width: 100%;
   }
 }
 
 @media (max-width: 550px) {
   .analysis-info-panel {
-    margin: 0 auto; /* Tambahkan ini agar panel info berada di tengah */
+    margin: 0 auto; 
     width: 100%;
-    max-width: 400px; /* Opsional, agar tidak terlalu lebar */
+    max-width: 400px; 
   }
 }

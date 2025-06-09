@@ -29,6 +29,7 @@ const Navbar = () => {
           <div className="nav-link-custom"><Link to="/support" onClick={() => setOpen(false)}>Support</Link></div>
         </div>
       )}
+      <Link to="/" className='dragfai-logo'><img src="/dragfai-icon.svg" alt="dragfAI" /></Link>
     </header>
   );
 };
