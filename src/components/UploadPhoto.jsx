@@ -88,7 +88,6 @@ const UploadPhoto = () => {
   };
 
   function getSeasonByMst(mstLabel) {
-    // mstLabel: e.g. 'mst_1', 'mst_2', ...
     const mstNum = parseInt(mstLabel.replace(/[^0-9]/g, ''));
     if ([1,2,3].includes(mstNum)) return 'Warm Spring';
     if ([4,5,6].includes(mstNum)) return 'Warm Autumn';
@@ -110,7 +109,6 @@ const UploadPhoto = () => {
     const interval = setInterval(updateMessage, transitionDuration);
     setMessageInterval(interval);
     try {
-      // Kirim ke backend Flask
       const formData = new FormData();
       formData.append('file', file);
       const response = await fetch('https://dragf-ai-test-production.up.railway.app/predict', {
@@ -121,10 +119,9 @@ const UploadPhoto = () => {
         throw new Error('Failed to analyze image');
       }
       const data = await response.json();
-      // Ambil musim dan warna dari JSON mapping
       const season = getSeasonByMst(data.skintone);
       const mapping = seasonMstColors[season];
-      // Simpan hasil analysis ke localStorage
+      
       if (imgSrc.startsWith('data:image/')) {
         const base64 = imgSrc.split(',')[1];
         localStorage.setItem('croppedImage', base64);
