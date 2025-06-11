@@ -199,6 +199,7 @@ const UploadPhoto = () => {
       <div className="upload-dropzone-text">
         <div>Click to upload a photo or drag and drop it here.</div>
         <small>Allowed formats: PNG and JPG.</small>
+        <small>Max 4MB</small>
       </div>
       {isError && <div className="upload-message error">{errorMessage}</div>}
     </div>
